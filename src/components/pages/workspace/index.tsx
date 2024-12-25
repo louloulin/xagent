@@ -18,11 +18,11 @@ export function WorkspacePage() {
           <PageDescription>管理和使用您的工作空间</PageDescription>
         </div>
         <Button 
-          className="bg-primary hover:bg-primary/90"
+          className="bg-[#4F46E5] hover:bg-[#4F46E5]/90 text-white rounded-full px-6"
           onClick={() => setCreateDialogOpen(true)}
         >
           <Plus className="mr-2 h-4 w-4" />
-          新建
+          创建
         </Button>
       </PageHeader>
 
