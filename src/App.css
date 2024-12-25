@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+    --header-height: 60px;
+    --sidebar-width: 280px;
+  }
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-border rounded-full hover:bg-muted-foreground/20;
+}
+
+/* 卡片悬停效果 */
+.card-hover {
+  @apply transition-all duration-200 ease-in-out;
+}
+
+.card-hover:hover {
+  @apply shadow-lg -translate-y-1;
+}
+
+/* 渐变背景 */
+.gradient-primary {
+  @apply bg-gradient-to-br from-primary to-primary/60;
+}
+
+/* 图片容器 */
+.aspect-card {
+  @apply relative pb-[56.25%];
+}
+
+.aspect-card > img {
+  @apply absolute inset-0 w-full h-full object-cover rounded-lg;
+}
+
+/* 文本截断 */
+.line-clamp-1 {
+  @apply overflow-hidden text-ellipsis whitespace-nowrap;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* 动画 */
+.fade-in {
+  @apply animate-in fade-in duration-300;
+}
+
+.slide-in {
+  @apply animate-in slide-in-from-bottom-4 duration-300;
+}
+
+/* 布局辅助 */
+.layout-container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.sidebar-width {
+  width: var(--sidebar-width);
+}
+
+.main-content {
+  @apply pl-[var(--sidebar-width)];
+}
+
+/* 响应式调整 */
+@media (max-width: 1024px) {
+  :root {
+    --sidebar-width: 240px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar-width {
+    @apply w-full;
+  }
+
+  .main-content {
+    @apply pl-0;
+  }
+}

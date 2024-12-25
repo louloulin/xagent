@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 225 95% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 225 25% 97%;
+    --secondary-foreground: 225 24% 26%;
+    --muted: 225 25% 96%;
+    --muted-foreground: 225 10% 45%;
+    --accent: 225 95% 45%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 225 15% 92%;
+    --input: 225 15% 92%;
+    --ring: 225 95% 45%;
+    --radius: 0.75rem;
+  }
+ 
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 225 95% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 225 25% 15%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 225 25% 15%;
+    --muted-foreground: 225 10% 70%;
+    --accent: 225 95% 45%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 225 25% 15%;
+    --input: 225 25% 15%;
+    --ring: 225 95% 45%;
+  }
+}
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+} 
+
+.workspace-item {
+  @apply relative flex items-center space-x-2 rounded-md p-2 hover:bg-accent transition-colors;
+}
+
+.workspace-item.active {
+  @apply bg-accent;
+}
+
+.workspace-status {
+  @apply absolute right-2 top-2 h-2 w-2 rounded-full;
+}
+
+.workspace-status.online {
+  @apply bg-green-500;
+}
+
+.workspace-status.offline {
+  @apply bg-gray-300;
+} 
